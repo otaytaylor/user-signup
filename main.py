@@ -27,7 +27,7 @@ def validation():
     else:
         username = username
 
-    if len(password) > 20 or len(password) < 3 or password=='' or '' in password:
+    if len(password) > 20 or len(password) < 3 or password=='':
         password_error = 'Invalid Password. Please enter a password between 3-20 characters with no spaces.'
 
 
@@ -59,7 +59,7 @@ def validation():
 @app.route("/welcome")
 def welcome():
     username = request.args.get('username')
-    return render_template('welcome.html', user=username)
+    return render_template('welcome.html', username=username)
 
 
 
